@@ -47,37 +47,47 @@
     --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Dark Mode Color Scheme */
+/* ============================================
+   DARK MODE — Deep Navy / Charcoal Theme
+   Rich, warm, and properly contrasted.
+   ============================================ */
 body.dark-mode {
-    --bg-cream: #0f0f0f;
-    --text-dark: #f0f0f0;
-    --text-muted: #b0b0b0;
-    
-    --sage-primary: #6eb399;
-    --sage-light: #88c7b0;
-    --sage-dark: #4a8f77;
-    --sage-translucent: rgba(110, 179, 153, 0.15);
-    
-    --gold-primary: #d9c969;
-    --gold-light: #e8d999;
-    --gold-dark: #c4b050;
-    --gold-glow: rgba(217, 201, 105, 0.25);
-    
-    --peach-light: #1a1410;
-    --peach-accent: #4a3a33;
-    
-    --blue-primary: #6b9dd9;
-    --blue-light: #89b5e8;
-    --blue-dark: #4a7ab5;
-    --blue-translucent: rgba(107, 157, 217, 0.15);
-    --blue-glow: rgba(107, 157, 217, 0.3);
-    
-    --glass-bg-blue: rgba(15, 25, 45, 0.95);
-    --glass-border-blue: rgba(255, 255, 255, 0.08);
-    
-    --glass-bg: rgba(20, 20, 25, 0.92);
-    --glass-border: rgba(255, 255, 255, 0.1);
-    --glass-shadow: rgba(0, 0, 0, 0.5);
+    /* Backgrounds */
+    --bg-cream: #111827;          /* Deep navy-charcoal page background */
+
+    /* Text */
+    --text-dark: #e8ecf0;         /* Bright but soft white for headings */
+    --text-muted: #8fa3b1;        /* Muted blue-grey for body text */
+
+    /* Sage Greens → softer mint-green for dark */
+    --sage-primary: #60a898;
+    --sage-light:   #7bbfb0;
+    --sage-dark:    #a8d5cc;      /* Light for headings that use sage-dark */
+    --sage-translucent: rgba(96, 168, 152, 0.12);
+
+    /* Golds — stay warm, just slightly brighter */
+    --gold-primary: #d4a843;
+    --gold-light:   #e8c56a;
+    --gold-dark:    #f0d080;      /* Lighter so it reads well on dark bg */
+    --gold-glow:    rgba(212, 168, 67, 0.35);
+
+    /* Peach → desaturated dark background tint */
+    --peach-light:  #1e2433;      /* Used as subtle card tint bg */
+    --peach-accent: #3a4558;
+
+    /* Blue */
+    --blue-primary: #5b8fe8;
+    --blue-light:   #7aaef5;
+    --blue-dark:    #3d6ec8;
+    --blue-translucent: rgba(91, 143, 232, 0.12);
+    --blue-glow:    rgba(91, 143, 232, 0.4);
+
+    /* Glass panels */
+    --glass-bg:          rgba(22, 30, 46, 0.92);   /* Deep navy glass */
+    --glass-border:      rgba(255, 255, 255, 0.08);
+    --glass-shadow:      rgba(0, 0, 0, 0.5);
+    --glass-bg-blue:     rgba(10, 18, 35, 0.95);
+    --glass-border-blue: rgba(255, 255, 255, 0.1);
 }
 
 /* Reset and Base Styles */
@@ -121,16 +131,16 @@ body {
 }
 
 body.dark-mode ::-webkit-scrollbar-track {
-    background: #0f0f0f;
+    background: #111827;
 }
 
 body.dark-mode ::-webkit-scrollbar-thumb {
-    background: rgba(110, 179, 153, 0.6);
-    border-color: #0f0f0f;
+    background: rgba(96, 168, 152, 0.5);
+    border-color: #111827;
 }
 
 body.dark-mode ::-webkit-scrollbar-thumb:hover {
-    background: rgba(110, 179, 153, 0.8);
+    background: rgba(96, 168, 152, 0.75);
 }
 
 /* Canvas Overlay style */
@@ -173,10 +183,12 @@ body.dark-mode ::-webkit-scrollbar-thumb:hover {
 
 body.dark-mode .dark-mode-toggle {
     color: var(--gold-light);
+    background: rgba(212, 168, 67, 0.1);
+    border: 1px solid rgba(212, 168, 67, 0.2);
 }
 
 body.dark-mode .dark-mode-toggle:hover {
-    background: rgba(217, 201, 105, 0.2);
+    background: rgba(212, 168, 67, 0.25);
     color: var(--gold-primary);
 }
 
@@ -318,13 +330,13 @@ body.dark-mode .btn-secondary:hover {
 }
 
 body.dark-mode .navbar {
-    background: rgba(15, 15, 15, 0.9);
-    border-bottom-color: rgba(217, 201, 105, 0.15);
+    background: rgba(15, 22, 36, 0.92);
+    border-bottom: 1px solid rgba(212, 168, 67, 0.15);
 }
 
 body.dark-mode .navbar.scrolled {
-    background: rgba(15, 15, 15, 0.98);
-    box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+    background: rgba(15, 22, 36, 0.99);
+    box-shadow: 0 2px 24px rgba(0, 0, 0, 0.5);
 }
 
 .nav-container {
@@ -381,8 +393,12 @@ body.dark-mode .logo-subtitle {
 }
 
 body.dark-mode .nav-badge {
-    background: rgba(217, 201, 105, 0.15);
-    border-color: rgba(217, 201, 105, 0.3);
+    background: rgba(212, 168, 67, 0.12);
+    border-color: rgba(212, 168, 67, 0.3);
+}
+
+body.dark-mode .badge-text {
+    color: var(--gold-light);
 }
 
 .badge-text {
@@ -424,7 +440,12 @@ body.dark-mode .nav-badge {
 }
 
 body.dark-mode .hero-bg-overlay {
-    background: linear-gradient(to bottom, rgba(10, 10, 10, 0.15), rgba(15, 15, 15, 0.30));
+    /* Deeper, richer dark overlay on the photo */
+    background: linear-gradient(
+        to bottom,
+        rgba(10, 15, 25, 0.65) 0%,
+        rgba(17, 24, 39, 0.88) 100%
+    );
 }
 
 .hero-content {
@@ -448,8 +469,9 @@ body.dark-mode .hero-bg-overlay {
 }
 
 body.dark-mode .hero-main-card {
-    background: rgba(20, 20, 25, 0.92);
-    border-color: rgba(217, 201, 105, 0.2);
+    background: rgba(15, 22, 36, 0.93);
+    border: 1px solid rgba(212, 168, 67, 0.2);
+    box-shadow: 0 16px 50px rgba(0,0,0,0.6);
 }
 
 /* Decorative Floral Corners inside Card */
@@ -493,8 +515,8 @@ body.dark-mode .hero-main-card {
 }
 
 body.dark-mode .freshers-tag {
-    background: rgba(110, 179, 153, 0.15);
-    border-color: rgba(110, 179, 153, 0.3);
+    background: rgba(96, 168, 152, 0.12);
+    border-color: rgba(96, 168, 152, 0.25);
     color: var(--sage-light);
 }
 
@@ -686,14 +708,15 @@ body.dark-mode .freshers-tag {
 }
 
 body.dark-mode .pillar-card {
-    background: rgba(20, 20, 25, 0.88);
-    border-color: rgba(217, 201, 105, 0.15);
+    background: rgba(20, 28, 44, 0.9);
+    border-color: rgba(255, 255, 255, 0.07);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
 }
 
 body.dark-mode .pillar-card:hover {
-    background: rgba(25, 25, 35, 0.95);
-    border-color: rgba(217, 201, 105, 0.35);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    background: rgba(25, 35, 55, 0.97);
+    border-color: rgba(212, 168, 67, 0.3);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4);
 }
 
 .card-flower-bg {
@@ -736,14 +759,15 @@ body.dark-mode .pillar-card:hover {
 }
 
 body.dark-mode .pillar-icon-wrapper {
-    background: rgba(110, 179, 153, 0.2);
-    border-color: rgba(110, 179, 153, 0.4);
+    background: rgba(96, 168, 152, 0.15);
+    border-color: rgba(96, 168, 152, 0.3);
     color: var(--sage-light);
 }
 
 body.dark-mode .pillar-card:hover .pillar-icon-wrapper {
-    background: rgba(110, 179, 153, 0.4);
-    border-color: rgba(110, 179, 153, 0.7);
+    background: var(--sage-primary);
+    color: #ffffff;
+    border-color: var(--sage-light);
 }
 
 .pillar-icon {
@@ -778,8 +802,9 @@ body.dark-mode .pillar-card:hover .pillar-icon-wrapper {
 }
 
 body.dark-mode .cta-card {
-    background: rgba(20, 20, 25, 0.92);
-    border-color: rgba(217, 201, 105, 0.15);
+    background: rgba(16, 23, 38, 0.95);
+    border-color: rgba(255, 255, 255, 0.07);
+    box-shadow: 0 16px 50px rgba(0, 0, 0, 0.5);
 }
 
 .cta-floral-overlay {
@@ -827,9 +852,9 @@ body.dark-mode .cta-floral-overlay {
 }
 
 body.dark-mode .cta-badge {
-    background: rgba(110, 179, 153, 0.15);
-    color: rgba(136, 199, 176, 0.9);
-    border-color: rgba(110, 179, 153, 0.3);
+    background: rgba(37, 211, 102, 0.1);
+    color: #4ecb85;
+    border-color: rgba(37, 211, 102, 0.2);
 }
 
 .cta-text-area h2 {
@@ -856,8 +881,12 @@ body.dark-mode .cta-badge {
 }
 
 body.dark-mode .instruction-box {
-    background: rgba(217, 201, 105, 0.12);
-    border-left-color: rgba(217, 201, 105, 0.6);
+    background: rgba(212, 168, 67, 0.08);
+    border-left-color: var(--gold-primary);
+}
+
+body.dark-mode .instruction-text {
+    color: var(--text-dark);
 }
 
 .instruction-icon {
@@ -922,14 +951,14 @@ body.dark-mode .instruction-box {
 }
 
 body.dark-mode .rep-card {
-    background: rgba(25, 25, 35, 0.85);
-    border-color: rgba(217, 201, 105, 0.2);
+    background: rgba(20, 28, 44, 0.88);
+    border-color: rgba(255, 255, 255, 0.07);
 }
 
 body.dark-mode .rep-card:hover {
-    background: rgba(30, 30, 40, 0.95);
-    border-color: rgba(217, 201, 105, 0.4);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    background: rgba(25, 35, 55, 0.97);
+    border-color: rgba(212, 168, 67, 0.35);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 }
 
 .rep-info {
@@ -957,13 +986,14 @@ body.dark-mode .rep-card:hover {
 }
 
 body.dark-mode .rep-avatar {
-    background: rgba(110, 179, 153, 0.2);
-    border-color: rgba(110, 179, 153, 0.4);
+    background: rgba(96, 168, 152, 0.15);
+    border-color: rgba(96, 168, 152, 0.3);
     color: var(--sage-light);
 }
 
 body.dark-mode .rep-card:hover .rep-avatar {
-    background: rgba(110, 179, 153, 0.4);
+    background: var(--sage-primary);
+    color: #ffffff;
 }
 
 .rep-details {
@@ -992,9 +1022,22 @@ body.dark-mode .rep-card:hover .rep-avatar {
 }
 
 body.dark-mode .footer {
-    background: #0a0a0a;
-    color: #d0d0d0;
-    border-top: 1px solid rgba(217, 201, 105, 0.15);
+    background: #0c111c;
+    color: #c5d0d8;
+    border-top: 1px solid rgba(212, 168, 67, 0.15);
+}
+
+body.dark-mode .footer-main-text {
+    color: #e8ecf0;
+}
+
+body.dark-mode .footer-disclaimer {
+    color: rgba(197, 208, 216, 0.55);
+    border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode .footer-credits {
+    color: rgba(197, 208, 216, 0.6);
 }
 
 .footer-floral-decor {
@@ -1573,13 +1616,17 @@ body.dark-mode .nav-insta-badge:hover {
 
 /* Journey Timeline Section */
 .journey-timeline-section {
-    background: radial-gradient(circle at top, var(--blue-dark), #0f1d33);
+    /* Rich deep indigo-navy with a subtle warm radial glow */
+    background:
+        radial-gradient(ellipse at 20% 50%, rgba(79, 70, 229, 0.18) 0%, transparent 55%),
+        radial-gradient(ellipse at 80% 20%, rgba(197, 160, 89, 0.12) 0%, transparent 50%),
+        linear-gradient(160deg, #0b1220 0%, #0d1f3c 50%, #0b1830 100%);
     padding: 8rem 0;
     position: relative;
     z-index: 2;
     color: #ffffff;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(197, 160, 89, 0.2);
+    border-bottom: 1px solid rgba(197, 160, 89, 0.2);
 }
 
 .text-light {
@@ -1598,9 +1645,19 @@ body.dark-mode .nav-insta-badge:hover {
     top: 0;
     bottom: 0;
     left: 50%;
-    width: 2px;
-    background: linear-gradient(to bottom, var(--gold-light), var(--blue-light), var(--gold-light));
+    width: 3px;
+    /* Warm gold-to-blue-to-gold gradient — much more visible */
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        #d4a843 10%,
+        #7aaef5 40%,
+        #d4a843 70%,
+        #d4a843 90%,
+        transparent
+    );
     transform: translateX(-50%);
+    opacity: 0.8;
 }
 
 .timeline-item {
@@ -1630,15 +1687,17 @@ body.dark-mode .nav-insta-badge:hover {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: var(--blue-light);
-    border: 3px solid var(--gold-primary);
+    /* Vivid indigo-to-cobalt gradient */
+    background: linear-gradient(135deg, #4338ca 0%, #2563eb 100%);
+    border: 2.5px solid #d4a843;
     color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
     z-index: 5;
-    box-shadow: 0 0 15px var(--blue-glow);
+    /* Strong warm glow */
+    box-shadow: 0 0 0 4px rgba(212, 168, 67, 0.15), 0 0 20px rgba(37, 99, 235, 0.6);
     transition: var(--transition-smooth);
 }
 
@@ -1651,29 +1710,30 @@ body.dark-mode .nav-insta-badge:hover {
 }
 
 .timeline-item:hover .timeline-node {
-    transform: scale(1.15);
-    background: var(--gold-primary);
+    transform: scale(1.18);
+    background: linear-gradient(135deg, #d4a843 0%, #f0d080 100%);
     border-color: #ffffff;
-    box-shadow: 0 0 20px var(--gold-glow);
+    box-shadow: 0 0 0 5px rgba(212, 168, 67, 0.25), 0 0 25px rgba(212, 168, 67, 0.7);
 }
 
 .glass-panel-blue {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Vivid blue-tinted glass — clearly visible against the dark bg */
+    background: rgba(30, 58, 138, 0.35);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(122, 174, 245, 0.3);
     border-radius: 20px;
     padding: 2rem;
     width: 90%;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255,255,255,0.07);
     transition: var(--transition-smooth);
 }
 
 .timeline-item:hover .glass-panel-blue {
     transform: translateY(-5px);
-    border-color: rgba(197, 160, 89, 0.4);
-    background: rgba(255, 255, 255, 0.09);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    background: rgba(37, 71, 161, 0.5);
+    border-color: rgba(212, 168, 67, 0.5);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(212, 168, 67, 0.2), inset 0 1px 0 rgba(255,255,255,0.1);
 }
 
 body.dark-mode .glass-panel-blue {
@@ -1688,34 +1748,36 @@ body.dark-mode .timeline-item:hover .glass-panel-blue {
 
 .timeline-tag {
     display: inline-block;
-    background: rgba(197, 160, 89, 0.15);
-    color: var(--gold-light);
-    border: 1px solid rgba(197, 160, 89, 0.3);
+    /* Bright amber gold — stands out clearly */
+    background: rgba(212, 168, 67, 0.2);
+    color: #f0d080;
+    border: 1px solid rgba(212, 168, 67, 0.55);
     padding: 0.3rem 0.8rem;
     border-radius: 30px;
     font-size: 0.75rem;
     font-weight: 700;
     margin-bottom: 0.8rem;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 body.dark-mode .timeline-tag {
-    background: rgba(217, 201, 105, 0.15);
-    color: var(--gold-light);
-    border-color: rgba(217, 201, 105, 0.3);
+    background: rgba(212, 168, 67, 0.2);
+    color: #f0d080;
+    border-color: rgba(212, 168, 67, 0.55);
 }
 
 .glass-panel-blue h3 {
     font-family: var(--font-heading);
     font-size: 1.3rem;
-    color: #ffffff;
+    color: #f0f6ff;
     margin-bottom: 0.6rem;
 }
 
 .glass-panel-blue p {
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.7);
-    line-height: 1.5;
+    color: rgba(200, 220, 255, 0.8);
+    line-height: 1.6;
 }
 
 /* FAQ Section */
@@ -1748,9 +1810,14 @@ body.dark-mode .timeline-tag {
     background: rgba(255, 255, 255, 0.9);
 }
 
+body.dark-mode .faq-item {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
 body.dark-mode .faq-item:hover {
-    background: rgba(25, 25, 35, 0.95);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    background: rgba(24, 33, 52, 0.97);
+    border-color: var(--blue-light);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
 .faq-trigger {
@@ -1808,8 +1875,13 @@ body.dark-mode .faq-trigger:hover {
     font-size: 0.95rem;
     color: var(--text-muted);
     line-height: 1.6;
-    border-top: 1px solid rgba(0,0,0,0.03);
+    border-top: 1px solid rgba(0,0,0,0.06);
     padding-top: 1rem;
+}
+
+body.dark-mode .faq-inner-text {
+    border-top-color: rgba(255, 255, 255, 0.06);
+    color: #8fa3b1;
 }
 
 /* Instagram CTA Banner inside CTA card */
@@ -1825,8 +1897,12 @@ body.dark-mode .faq-trigger:hover {
 }
 
 body.dark-mode .insta-cta-box {
-    background: linear-gradient(135deg, rgba(204, 35, 102, 0.12), rgba(107, 157, 217, 0.12));
-    border-color: rgba(217, 201, 105, 0.2);
+    background: linear-gradient(135deg, rgba(204, 35, 102, 0.1), rgba(91, 143, 232, 0.1));
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode .insta-text-wrapper h4 {
+    color: var(--text-dark);
 }
 
 .insta-icon-wrapper {
