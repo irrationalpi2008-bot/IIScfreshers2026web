@@ -342,7 +342,9 @@ body.dark-mode .navbar.scrolled {
     gap: 0.8rem;
 }
 
-.iisc-logo-svg {
+.iisc-logo-img {
+    height: 45px;
+    width: auto;
     filter: drop-shadow(0 2px 4px rgba(197, 160, 89, 0.2));
 }
 
@@ -422,7 +424,7 @@ body.dark-mode .nav-badge {
 }
 
 body.dark-mode .hero-bg-overlay {
-    background: linear-gradient(to bottom, rgba(10, 10, 10, 0.85), rgba(15, 15, 15, 0.95));
+    background: linear-gradient(to bottom, rgba(10, 10, 10, 0.15), rgba(15, 15, 15, 0.30));
 }
 
 .hero-content {
@@ -1294,9 +1296,9 @@ body.dark-mode .footer {
         gap: 0.5rem;
     }
 
-    .iisc-logo-svg {
-        width: 35px;
-        height: 35px;
+    .iisc-logo-img {
+        height: 28px;
+        width: auto;
     }
 
     .logo-title {
