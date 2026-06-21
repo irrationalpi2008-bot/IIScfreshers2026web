@@ -1,6 +1,29 @@
 /* script.js - Floating Petal System, Scroll Actions & Accordions */
 
 document.addEventListener("DOMContentLoaded", () => {
+    // 0. Dark Mode Toggle
+    const darkModeToggle = document.getElementById("dark-mode-toggle");
+    const isDarkMode = localStorage.getItem("iisc-darkMode") === "true";
+    
+    // Apply saved dark mode preference on page load
+    if (isDarkMode) {
+        document.body.classList.add("dark-mode");
+        darkModeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+    }
+    
+    // Dark mode toggle event listener
+    darkModeToggle.addEventListener("click", () => {
+        const isCurrentlyDark = document.body.classList.toggle("dark-mode");
+        localStorage.setItem("iisc-darkMode", isCurrentlyDark);
+        
+        // Change icon based on mode
+        if (isCurrentlyDark) {
+            darkModeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+        } else {
+            darkModeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
+        }
+    });
+
     // 1. Navbar Scroll Effect
     const navbar = document.querySelector(".navbar");
     window.addEventListener("scroll", () => {
