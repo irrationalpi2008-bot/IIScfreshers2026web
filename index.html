@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to IISc Bangalore | UG Freshers 2026</title>
+    <meta name="description" content="Official student-led community page for the Indian Institute of Science (IISc) Bangalore UG Freshers 2026. Join the WhatsApp community and connect with seniors.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Canvas for Floating Floral Petals -->
+    <canvas id="petal-canvas"></canvas>
+
+    <!-- Top Navigation Header -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo-area">
+                <!-- IISc Emblem Styled in SVG -->
+                <svg class="iisc-logo-svg" viewBox="0 0 100 100" width="45" height="45">
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="var(--gold-primary)" stroke-width="2"/>
+                    <circle cx="50" cy="50" r="41" fill="none" stroke="var(--gold-light)" stroke-width="1" stroke-dasharray="4 2"/>
+                    <!-- Main Building Tower stylized symbol -->
+                    <path d="M46,65 L46,45 L48,45 L48,32 L50,25 L52,32 L52,45 L54,45 L54,65 Z" fill="var(--gold-primary)"/>
+                    <path d="M42,65 L58,65" stroke="var(--gold-primary)" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M48,30 L52,30" stroke="var(--gold-light)" stroke-width="1"/>
+                    <path d="M47,40 L53,40" stroke="var(--gold-light)" stroke-width="1"/>
+                    <!-- Small star on top -->
+                    <polygon points="50,21 51,23 53,23 51,24 52,26 50,25 48,26 49,24 47,23 49,23" fill="var(--gold-primary)"/>
+                </svg>
+                <div class="logo-text">
+                    <span class="logo-title">IISc Bangalore</span>
+                    <span class="logo-subtitle">Indian Institute of Science</span>
+                </div>
+            </div>
+            <div class="nav-right">
+                <a href="https://instagram.com/iisc_freshers_2026" target="_blank" class="nav-insta-badge" title="Follow us on Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                    <span>@iisc_freshers_2026</span>
+                </a>
+                <div class="nav-badge">
+                    <span class="badge-text">UG Freshers 2026</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-bg-overlay"></div>
+            <div class="hero-content container">
+                <div class="floral-frame-decor top-left"></div>
+                <div class="floral-frame-decor bottom-right"></div>
+                
+                <div class="hero-main-card glass-panel fade-in">
+                    <div class="freshers-tag">
+                        <span class="tag-icon"><i class="fa-solid fa-leaf"></i></span>
+                        <span class="tag-label">Freshers 2026</span>
+                    </div>
+                    
+                    <h1 class="hero-title">
+                        Welcome to <span class="accent-text">IISc Bangalore</span>
+                    </h1>
+                    <p class="hero-subtitle">The Start of Our Journey Together</p>
+                    
+                    <div class="quote-divider">
+                        <span class="line"></span>
+                        <i class="fa-solid fa-seedling quote-icon"></i>
+                        <span class="line"></span>
+                    </div>
+                    
+                    <blockquote class="hero-quote">
+                        "You're not just joining an institute, you're joining a family."
+                    </blockquote>
+                    
+                    <div class="hero-buttons">
+                        <a href="#join-community" class="btn btn-primary scroll-link">
+                            <span class="btn-text">Join WhatsApp Community</span>
+                            <span class="btn-icon"><i class="fa-brands fa-whatsapp"></i></span>
+                        </a>
+                        <a href="https://instagram.com/iisc_freshers_2026" target="_blank" class="btn btn-insta">
+                            <span class="btn-text">Follow Instagram</span>
+                            <span class="btn-icon"><i class="fa-brands fa-instagram"></i></span>
+                        </a>
+                        <a href="#pillars" class="btn btn-secondary scroll-link">
+                            <span class="btn-text">Explore More</span>
+                            <span class="btn-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scroll-down-hint">
+                <span class="scroll-text">Scroll to explore</span>
+                <div class="scroll-mouse">
+                    <div class="scroll-wheel"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pillars Section -->
+        <section id="pillars" class="pillars-section container">
+            <div class="section-header text-center animate-on-scroll">
+                <span class="section-pretitle">Why Join Us?</span>
+                <h2 class="section-title">One Community. Endless Possibilities.</h2>
+                <div class="floral-divider">
+                    <svg viewBox="0 0 100 20" width="100" height="20">
+                        <path d="M10,10 Q30,15 50,10 T90,10" fill="none" stroke="var(--gold-primary)" stroke-width="1.5"/>
+                        <circle cx="50" cy="10" r="3" fill="var(--gold-primary)"/>
+                        <path d="M47,7 C45,4 40,4 37,8 Q44,9 47,7" fill="var(--sage-primary)"/>
+                        <path d="M53,7 C55,4 60,4 63,8 Q56,9 53,7" fill="var(--sage-primary)"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="pillars-grid">
+                <!-- Card 1 -->
+                <div class="pillar-card glass-panel animate-on-scroll delay-1">
+                    <div class="card-flower-bg"></div>
+                    <div class="pillar-icon-wrapper">
+                        <i class="fa-solid fa-users-viewfinder pillar-icon"></i>
+                    </div>
+                    <h3>Meet Future Batchmates</h3>
+                    <p>Start connecting with your peers before the session begins. Share interests, discuss accommodation options, and find friends who share your passion for science and technology.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="pillar-card glass-panel animate-on-scroll delay-2">
+                    <div class="card-flower-bg"></div>
+                    <div class="pillar-icon-wrapper">
+                        <i class="fa-solid fa-user-graduate pillar-icon"></i>
+                    </div>
+                    <h3>Seniors' Support</h3>
+                    <p>Get invaluable guidance from seniors who've walked this path before. Ask about course selections, research labs, campus life, hostels, clubs, or navigating Bangalore city.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="pillar-card glass-panel animate-on-scroll delay-3">
+                    <div class="card-flower-bg"></div>
+                    <div class="pillar-icon-wrapper">
+                        <i class="fa-solid fa-bell pillar-icon"></i>
+                    </div>
+                    <h3>Stay Updated Always</h3>
+                    <p>Receive real-time notifications about registrations, counselling rounds, orientation schedules, hostel allotments, and early meetup events organized just for you.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Freshers Onboarding Timeline Section (Blue-Gold Theme & Animated Scroll) -->
+        <section id="journey" class="journey-timeline-section">
+            <div class="journey-bg-decor"></div>
+            <div class="container">
+                <div class="section-header text-center animate-on-scroll">
+                    <span class="section-pretitle">The Onboarding Timeline</span>
+                    <h2 class="section-title text-light">Your Freshers Journey Checklist</h2>
+                    <div class="floral-divider">
+                        <svg viewBox="0 0 100 20" width="100" height="20">
+                            <path d="M10,10 Q30,15 50,10 T90,10" fill="none" stroke="var(--gold-light)" stroke-width="1.5"/>
+                            <circle cx="50" cy="10" r="3" fill="var(--gold-light)"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="timeline-container">
+                    <div class="timeline-line"></div>
+                    
+                    <!-- Timeline Item 1 -->
+                    <div class="timeline-item animate-on-scroll left">
+                        <div class="timeline-node"><i class="fa-solid fa-file-signature"></i></div>
+                        <div class="timeline-card glass-panel-blue">
+                            <div class="timeline-tag">Step 01</div>
+                            <h3>Rank & Name Verification</h3>
+                            <p>Contact a representative below to send your approximate rank, name, and branch. This ensures a spam-free, secure community verified strictly for incoming undergraduates.</p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 2 -->
+                    <div class="timeline-item animate-on-scroll right">
+                        <div class="timeline-node"><i class="fa-brands fa-whatsapp"></i></div>
+                        <div class="timeline-card glass-panel-blue">
+                            <div class="timeline-tag">Step 02</div>
+                            <h3>Community WhatsApp Entry</h3>
+                            <p>Get added to the official IISc UG Freshers 2026 WhatsApp group. Meet your batchmates, start group chats, and read curated resource lists prepared by seniors.</p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 3 -->
+                    <div class="timeline-item animate-on-scroll left">
+                        <div class="timeline-node"><i class="fa-solid fa-house-chimney"></i></div>
+                        <div class="timeline-card glass-panel-blue">
+                            <div class="timeline-tag">Step 03</div>
+                            <h3>Hostel & Course Prep</h3>
+                            <p>Collaborate with seniors to complete your hostel allocation forms, medical check-up checklists, fee submissions, and course registration steps without hiccups.</p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 4 -->
+                    <div class="timeline-item animate-on-scroll right">
+                        <div class="timeline-node"><i class="fa-solid fa-campground"></i></div>
+                        <div class="timeline-card glass-panel-blue">
+                            <div class="timeline-tag">Step 04</div>
+                            <h3>Campus Arrival & Meetups</h3>
+                            <p>Arrive at the beautiful, green green campus! Attend ice-breaker sessions, hostel meetups, and the official undergraduate orientation ceremony together with your new family.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section (Animated Scroll & Blue Border Elements) -->
+        <section id="faqs" class="faq-section container">
+            <div class="section-header text-center animate-on-scroll">
+                <span class="section-pretitle">Have Questions?</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="floral-divider">
+                    <svg viewBox="0 0 100 20" width="100" height="20">
+                        <path d="M10,10 Q30,15 50,10 T90,10" fill="none" stroke="var(--blue-light)" stroke-width="1.5"/>
+                        <circle cx="50" cy="10" r="3" fill="var(--blue-light)"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="faq-accordion-wrapper animate-on-scroll">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item">
+                    <button class="faq-trigger">
+                        <span>Is this WhatsApp community official?</span>
+                        <span class="faq-trigger-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                    </button>
+                    <div class="faq-content">
+                        <div class="faq-inner-text">
+                            No. This is a student-led mentorship community run by senior undergraduates at IISc Bangalore. We initiate this group every year to help freshers with hostel forms, document submission guidance, and building friendships before they step onto the campus. Official admin announcements will reach you directly via your registered email.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="faq-item">
+                    <button class="faq-trigger">
+                        <span>What details do I need to send to the representatives to join?</span>
+                        <span class="faq-trigger-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                    </button>
+                    <div class="faq-content">
+                        <div class="faq-inner-text">
+                            Please send your <strong>Full Name</strong>, <strong>Approximate Entrance Exam Rank</strong>, and your <strong>Allotted Branch</strong> (e.g., BS Research or B.Tech Mathematics & Computing). This verification step helps protect the group from automated spam bots, marketers, and non-IISc accounts, ensuring a secure and supportive community for you.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="faq-item">
+                    <button class="faq-trigger">
+                        <span>When do hostel allotment lists come out?</span>
+                        <span class="faq-trigger-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                    </button>
+                    <div class="faq-content">
+                        <div class="faq-inner-text">
+                            Hostel allotment links and registration details are typically released a week before classes commence. Seniors will share step-by-step screenshots and guides inside the WhatsApp group as soon as the portal is launched to help you successfully secure your room.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="join-community" class="cta-section container">
+            <div class="cta-card glass-panel animate-on-scroll">
+                <div class="cta-floral-overlay"></div>
+                <div class="cta-content-grid">
+                    <div class="cta-text-area">
+                        <div class="cta-badge">
+                            <i class="fa-brands fa-whatsapp"></i> WhatsApp Community
+                        </div>
+                        <h2>Connect with the Family</h2>
+                        <p class="cta-lead">
+                            Join the official community WhatsApp group for all UG Freshers 2026. This group is mentored by your seniors to ensure you have a seamless transition into IISc.
+                        </p>
+                        
+                        <div class="instruction-box">
+                            <div class="instruction-icon">
+                                <i class="fa-solid fa-circle-info"></i>
+                            </div>
+                            <div class="instruction-text">
+                                <strong>How to Join:</strong> Send your approximate rank, name, and branch to any of the community representatives listed below, and they will immediately add you to the group.
+                            </div>
+                        </div>
+
+                        <!-- Instagram CTA Banner inside CTA card -->
+                        <div class="insta-cta-box">
+                            <div class="insta-icon-wrapper">
+                                <i class="fa-brands fa-instagram"></i>
+                            </div>
+                            <div class="insta-text-wrapper">
+                                <h4>Follow Our Instagram Handle</h4>
+                                <p>Stay updated with stories, campus reels, and highlights on <a href="https://instagram.com/iisc_freshers_2026" target="_blank">@iisc_freshers_2026</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="cta-action-area">
+                        <h3 class="representatives-title">Contact Community Representatives</h3>
+                        <div class="representatives-list">
+                            <!-- Arya Dubey Card -->
+                            <div class="rep-card">
+                                <div class="rep-info">
+                                    <div class="rep-avatar">
+                                        <i class="fa-solid fa-user"></i>
+                                    </div>
+                                    <div class="rep-details">
+                                        <span class="rep-name">Arya Dubey</span>
+                                        
+                                    </div>
+                                </div>
+                                <a href="https://wa.me/918107258977?text=Hi%20Arya%21%20I%27m%20joining%20IISc%20as%20a%20UG%20fresher%20for%20the%202026%20batch.%20Here%20are%20my%20details%20to%20join%20the%20community%20WhatsApp%20group%3A%0A%0A-%20Name%3A%20%0A-%20Approx%20Rank%3A%20%0A-%20Branch%3A%20" 
+                                   target="_blank" 
+                                   class="btn btn-whatsapp"
+                                   id="contact-arya">
+                                    <span class="btn-text">Message Arya</span>
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </a>
+                            </div>
+                            <!-- Medhansh Card -->
+                            <div class="rep-card">
+                                <div class="rep-info">
+                                    <div class="rep-avatar">
+                                        <i class="fa-solid fa-user"></i>
+                                    </div>
+                                    <div class="rep-details">
+                                        <span class="rep-name">Medhansh</span>
+                                        
+                                    </div>
+                                </div>
+                                <a href="https://wa.me/919871138552?text=Hi%20Medhansh%21%20I%27m%20joining%20IISc%20as%20a%20UG%20fresher%20for%20the%202026%20batch.%20Here%20are%20my%20details%20to%20join%20the%20community%20WhatsApp%20group%3A%0A%0A-%20Name%3A%20%0A-%20Approx%20Rank%3A%20%0A-%20Branch%3A%20" 
+                                   target="_blank" 
+                                   class="btn btn-whatsapp"
+                                   id="contact-medhansh">
+                                    <span class="btn-text">Message Medhansh</span>
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </a>
+                            </div>
+
+                            <!-- Vidhaan Card -->
+                            <div class="rep-card">
+                                <div class="rep-info">
+                                    <div class="rep-avatar">
+                                        <i class="fa-solid fa-user"></i>
+                                    </div>
+                                    <div class="rep-details">
+                                        <span class="rep-name">Vidhaan</span>
+                                        
+                                    </div>
+                                </div>
+                                <a href="https://wa.me/919456676196?text=Hi%20Vidhaan%21%20I%27m%20joining%20IISc%20as%20a%20UG%20fresher%20for%20the%202026%20batch.%20Here%20are%20my%20details%20to%20join%20the%20community%20WhatsApp%20group%3A%0A%0A-%20Name%3A%20%0A-%20Approx%20Rank%3A%20%0A-%20Branch%3A%20" 
+                                   target="_blank" 
+                                   class="btn btn-whatsapp"
+                                   id="contact-vidhaan">
+                                    <span class="btn-text">Message Vidhaan</span>
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </a>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content text-center">
+            <div class="footer-floral-decor">
+                <svg viewBox="0 0 100 20" width="80" height="20">
+                    <path d="M10,10 Q50,0 90,10" fill="none" stroke="var(--gold-light)" stroke-width="1"/>
+                    <circle cx="50" cy="5" r="2" fill="var(--gold-primary)"/>
+                </svg>
+            </div>
+            <p class="footer-main-text">Indian Institute of Science Bangalore</p>
+            <p class="footer-sub-text">UG Freshers 2026 Community Portal</p>
+            
+            <div class="footer-social-links">
+                <a href="https://instagram.com/iisc_freshers_2026" target="_blank" class="footer-social-icon" title="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+
+            <div class="footer-disclaimer">
+                <p>This is a student-led mentorship initiative created by seniors to welcome and support incoming undergraduates. It is not an official IISc administration portal.</p>
+            </div>
+            <div class="footer-credits">
+                <p>&copy; 2026 IISc Undergraduate Student Community. Designed with <i class="fa-solid fa-heart heart-icon"></i> & flowers.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
