@@ -1110,6 +1110,11 @@ body.dark-mode .footer {
         font-size: 0.65rem;
     }
 
+    .iisc-logo-img {
+        height: 32px;
+        width: auto;
+    }
+
     .nav-insta-badge {
         display: none; /* hide instagram badge on mobile — use hero button instead */
     }
