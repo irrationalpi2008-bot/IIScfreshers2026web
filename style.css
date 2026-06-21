@@ -47,6 +47,39 @@
     --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* Dark Mode Color Scheme */
+body.dark-mode {
+    --bg-cream: #1a1a1a;
+    --text-dark: #e8e8e8;
+    --text-muted: #a0a0a0;
+    
+    --sage-primary: #7fb3a1;
+    --sage-light: #98c7b5;
+    --sage-dark: #5a8f7f;
+    --sage-translucent: rgba(127, 179, 161, 0.12);
+    
+    --gold-primary: #d4b85f;
+    --gold-light: #e8cc7a;
+    --gold-dark: #b89a45;
+    --gold-glow: rgba(212, 184, 95, 0.3);
+    
+    --peach-light: #3d2e29;
+    --peach-accent: #6b5450;
+    
+    --blue-primary: #5b8cc8;
+    --blue-light: #7aa5d8;
+    --blue-dark: #3d5fa8;
+    --blue-translucent: rgba(91, 140, 200, 0.12);
+    --blue-glow: rgba(91, 140, 200, 0.35);
+    
+    --glass-bg-blue: rgba(30, 45, 70, 0.9);
+    --glass-border-blue: rgba(255, 255, 255, 0.1);
+    
+    --glass-bg: rgba(45, 45, 45, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --glass-shadow: rgba(0, 0, 0, 0.3);
+}
+
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -98,12 +131,51 @@ body {
     pointer-events: none;
 }
 
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    color: var(--sage-primary);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.dark-mode-toggle:hover {
+    background: var(--peach-light);
+    color: var(--gold-dark);
+    transform: scale(1.1);
+}
+
+.dark-mode-toggle i {
+    transition: var(--transition-smooth);
+}
+
 /* Layout Utilities */
 .container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 0.8rem;
+    }
 }
 
 .text-center {
@@ -134,6 +206,9 @@ body {
     cursor: pointer;
     transition: var(--transition-smooth);
     border: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .btn-primary {
@@ -856,59 +931,444 @@ body {
     }
 }
 
-/* Responsiveness adjustments */
+/* ============================================
+   RESPONSIVE BREAKPOINTS — MOBILE FIRST
+   ============================================ */
+
+/* Tablet — up to 992px */
 @media (max-width: 992px) {
     .cta-content-grid {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 2rem;
     }
-    
+
     .pillars-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .hero-title {
-        font-size: 2.8rem;
+        font-size: 2.6rem;
+    }
+
+    .nav-insta-badge span {
+        display: none; /* show only icon on mid screens */
     }
 }
 
+/* Mobile — up to 768px */
 @media (max-width: 768px) {
-    .pillars-grid {
-        grid-template-columns: 1fr;
+
+    /* --- Navbar --- */
+    .nav-container {
+        padding: 0 1rem;
     }
-    
-    .hero-main-card {
-        padding: 2.5rem 1.5rem;
+
+    .logo-title {
+        font-size: 1rem;
     }
-    
-    .hero-title {
-        font-size: 2.2rem;
+
+    .logo-subtitle {
+        font-size: 0.65rem;
     }
-    
-    .hero-subtitle {
-        font-size: 1.1rem;
+
+    .nav-insta-badge {
+        display: none; /* hide instagram badge on mobile — use hero button instead */
     }
-    
-    .hero-quote {
+
+    .nav-badge {
+        padding: 0.3rem 0.7rem;
+    }
+
+    .dark-mode-toggle {
+        width: 38px;
+        height: 38px;
         font-size: 1.2rem;
     }
-    
+
+    .badge-text {
+        font-size: 0.7rem;
+    }
+
+    /* --- Hero --- */
+    .hero-section {
+        padding: 5rem 0 3rem 0;
+        background-attachment: scroll;
+    }
+
+    .hero-content {
+        padding: 0 1rem;
+    }
+
+    .hero-main-card {
+        padding: 2rem 1.2rem;
+        border-radius: 18px;
+    }
+
+    .hero-title {
+        font-size: 1.9rem;
+        line-height: 1.25;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-quote {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* --- Sections Common --- */
+    .container {
+        padding: 0 1rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    /* --- Pillars --- */
+    .pillars-section {
+        padding: 5rem 1rem;
+    }
+
+    .pillars-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .pillar-card {
+        padding: 2rem 1.5rem;
+    }
+
+    /* --- CTA Section --- */
+    .cta-section {
+        padding: 2rem 1rem 5rem 1rem;
+    }
+
     .cta-card {
-        padding: 2.5rem 1.5rem;
+        padding: 2rem 1.2rem;
+        border-radius: 18px;
     }
-    
+
+    .cta-content-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
     .cta-text-area h2 {
-        font-size: 2.2rem;
+        font-size: 1.8rem;
     }
-    
+
+    .cta-lead {
+        font-size: 0.95rem;
+    }
+
+    .insta-cta-box {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.8rem;
+    }
+
+    /* --- Representatives --- */
+    .representatives-title {
+        font-size: 1.2rem;
+    }
+
     .rep-card {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
+        gap: 0.8rem;
     }
-    
+
     .rep-card .btn-whatsapp {
         width: 100%;
         justify-content: center;
+    }
+
+    /* --- FAQ --- */
+    .faq-section {
+        padding: 5rem 1rem;
+    }
+
+    .faq-trigger {
+        padding: 1.2rem 1rem;
+        font-size: 1rem;
+    }
+
+    .faq-inner-text {
+        padding: 0.8rem 1rem 1.4rem 1rem;
+    }
+
+    /* --- Footer --- */
+    .footer {
+        padding: 3rem 0 2rem 0;
+    }
+
+    .footer-main-text {
+        font-size: 1.2rem;
+    }
+
+    .footer-sub-text {
+        font-size: 0.75rem;
+    }
+
+    /* --- Scroll hint --- */
+    .scroll-down-hint {
+        display: none;
+    }
+}
+
+/* Extra small — up to 480px */
+@media (max-width: 480px) {
+    /* --- General --- */
+    html {
+        font-size: 14px;
+    }
+
+    /* --- Navbar --- */
+    .nav-container {
+        padding: 0 0.8rem;
+    }
+
+    .nav-right {
+        gap: 0.8rem;
+    }
+
+    .dark-mode-toggle {
+        width: 36px;
+        height: 36px;
+        font-size: 1.1rem;
+    }
+
+    .logo-area {
+        gap: 0.5rem;
+    }
+
+    .iisc-logo-svg {
+        width: 35px;
+        height: 35px;
+    }
+
+    .logo-title {
+        font-size: 0.85rem;
+    }
+
+    .logo-subtitle {
+        font-size: 0.6rem;
+    }
+
+    .nav-badge {
+        padding: 0.25rem 0.6rem;
+    }
+
+    .badge-text {
+        font-size: 0.65rem;
+    }
+
+    /* --- Hero Section --- */
+    .hero-main-card {
+        padding: 1.5rem 1rem;
+        border-radius: 16px;
+    }
+
+    .hero-title {
+        font-size: 1.6rem;
+        line-height: 1.3;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .hero-quote {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.6rem;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        font-size: 0.85rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .freshers-tag {
+        font-size: 0.75rem;
+        padding: 0.35rem 0.8rem;
+    }
+
+    /* --- Sections --- */
+    .pillars-section {
+        padding: 4rem 0;
+    }
+
+    .section-title {
+        font-size: 1.4rem;
+        line-height: 1.3;
+    }
+
+    .section-pretitle {
+        font-size: 0.75rem;
+    }
+
+    .pillars-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .pillar-card h3 {
+        font-size: 1.15rem;
+    }
+
+    .pillar-card p {
+        font-size: 0.9rem;
+    }
+
+    /* --- Timeline Section --- */
+    .journey-timeline-section {
+        padding: 4rem 0;
+    }
+
+    .timeline-item {
+        margin-bottom: 1.5rem;
+    }
+
+    .timeline-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .timeline-card p {
+        font-size: 0.9rem;
+    }
+
+    /* --- CTA Section --- */
+    .cta-section {
+        padding: 2rem 0;
+    }
+
+    .cta-card {
+        padding: 1.5rem 1rem;
+        border-radius: 16px;
+    }
+
+    .cta-content-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .cta-text-area h2 {
+        font-size: 1.4rem;
+        line-height: 1.3;
+    }
+
+    .cta-lead {
+        font-size: 0.9rem;
+    }
+
+    .instruction-box {
+        font-size: 0.85rem;
+        padding: 1rem 0.8rem;
+    }
+
+    .insta-cta-box {
+        padding: 1rem 0.8rem;
+    }
+
+    .insta-cta-box h4 {
+        font-size: 1rem;
+    }
+
+    .insta-cta-box p {
+        font-size: 0.85rem;
+    }
+
+    /* --- Representatives --- */
+    .representatives-title {
+        font-size: 1.1rem;
+    }
+
+    .representatives-list {
+        gap: 0.8rem;
+    }
+
+    .rep-card {
+        flex-direction: column;
+        gap: 0.8rem;
+        padding: 1rem;
+    }
+
+    .rep-avatar {
+        width: 35px;
+        height: 35px;
+    }
+
+    .rep-name {
+        font-size: 0.95rem;
+    }
+
+    .btn-whatsapp {
+        width: 100%;
+        font-size: 0.9rem;
+        padding: 0.75rem 1rem;
+    }
+
+    /* --- FAQ --- */
+    .faq-section {
+        padding: 3rem 0;
+    }
+
+    .faq-trigger {
+        padding: 1rem 0.8rem;
+        font-size: 0.95rem;
+    }
+
+    .faq-inner-text {
+        padding: 0.8rem 0.8rem 1.2rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    /* --- Footer --- */
+    .footer {
+        padding: 2rem 0 1.5rem 0;
+    }
+
+    .footer-main-text {
+        font-size: 1.1rem;
+    }
+
+    .footer-sub-text {
+        font-size: 0.7rem;
+    }
+
+    .footer-disclaimer p {
+        font-size: 0.8rem;
+    }
+
+    .footer-credits p {
+        font-size: 0.75rem;
+    }
+
+    /* --- Scroll hint --- */
+    .scroll-down-hint {
+        display: none;
     }
 }
 
@@ -1245,27 +1705,48 @@ body {
 
 /* Timeline Responsiveness */
 @media (max-width: 768px) {
-    .timeline-line {
-        left: 20px;
+    .journey-timeline-section {
+        padding: 5rem 0;
     }
-    
+
+    .timeline-container {
+        padding: 1rem 0;
+    }
+
+    .timeline-line {
+        left: 22px;
+        top: 0;
+        bottom: 0;
+    }
+
     .timeline-item {
         width: 100%;
-        padding-left: 50px;
-        padding-right: 0;
+        left: 0 !important;
+        padding: 1rem 1rem 1rem 60px;
+        align-items: flex-start !important;
+        text-align: left !important;
     }
-    
-    .timeline-item.left {
-        align-items: flex-start;
-        text-align: left;
-    }
-    
+
     .timeline-item.left .timeline-node,
     .timeline-item.right .timeline-node {
-        left: 0;
+        left: 0 !important;
+        right: auto !important;
+        top: 1.3rem;
+        width: 44px;
+        height: 44px;
+        font-size: 1rem;
     }
-    
+
     .glass-panel-blue {
         width: 100%;
+        padding: 1.4rem;
+    }
+
+    .glass-panel-blue h3 {
+        font-size: 1.1rem;
+    }
+
+    .glass-panel-blue p {
+        font-size: 0.85rem;
     }
 }
